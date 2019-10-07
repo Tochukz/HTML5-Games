@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Drawing Images</title>
+    <style type="text/css">
+        canvas {
+            border: 1px solid silver;
+            margin-left: 1em;
+        }
+        div {
+            width: 640px;
+            text-align: right;
+            margin-top: 1em;
+            margin-bottom: 1em; 
+        }
+    </style>
+</head>
+<body>
+    <canvas width="640" height="680" id="images-canvas">
+        Your browser does not support HTML5 canvas.
+    </canvas>
+    <canvas width="640" height="680" id="trans-canvas">
+            Your browser does not support HTML5 canvas.
+        </canvas>
+    <img src="space-ship.min.png" id="space-ship" style="display: none" />
+
+    <script src="drawing-images.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Basic HTML5 Game</title>
+   <style type="text/css">
+     canvas {
+        border: 1px solid silver;
+        margin-left: 1em;
+     }
+     div {
+         width: 640px;
+         text-align: right;
+         margin-top: 1em;
+         margin-bottom: 1em; 
+     }
+   </style>
+</head>
+<body>
+    <canvas width="440" height="380" id="shape-canvas">
+      Your browser does not support HTML5 canvas. Please shift to a newer browser.
+    </canvas>
+    <canvas width="640" height="380" id="text-canvas">
+        Your browser does not support HTML5 canvas.
+    </canvas>
+    <canvas width="540" height="380" id="style-canvas">
+        Your browser does not support HTML5 canvas.
+    </canvas>
+    
+    <div>
+        <button type="button" onclick="clearReact()">Clear Rect Portion</button>
+    </div>    
+    <img src="fire.jpg" id="fire" style="display: none" />
+   
+    <script src="drawing-shapes.js"></script>
+    <script src="drawing-text.js"></script>
+    <script src="style-drawing.js"></script>
+</body>
+</html>
