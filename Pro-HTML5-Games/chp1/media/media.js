@@ -38,7 +38,14 @@ function playSupporteAudio() {
         const sound = new Audio();
         // Load sound file with the detected extension
         sound.src = "bensound-acousticbreeze" + soundFileExtn;
-        sound.play();
+        
+        //sound.play();
+        // We can use the canplaythrough event to check if the browser can play the entire audio file without needing to pause and buffer the file
+        sound.addEventListener("canplaythrough", function() {
+          sound.play();
+        });
+
+        // oTher usable events includes loadedmetadata, canplay, 
     }
 }
 

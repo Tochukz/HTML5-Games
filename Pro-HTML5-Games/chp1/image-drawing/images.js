@@ -26,6 +26,7 @@ drawImage();
  drawImage(image, x, y, width, height) // Scales the image to the specified width and height and then draws it at (x, y)
  drawImage(image, sourceX, sourceY, sourceWidth, sourceHeight, x, y, width, height) 
  // Clips a rectangle from the image at (sourceX, sourceY) with dimensions (sourceWidth, sourceHeight), scales it to the specified width and height, and draws it on the canvas at (x, y) 
+ drawImage(image, clipX, clipY, clipDymX, clipDymY, canvasX, canvaY, scaleX, scaleY)
  */
 
  /* Tranforming and Rotating */
@@ -51,3 +52,33 @@ function trans() {
 }
 
 trans();
+
+/* Dynamically loading an image */
+function dynamicLoadImage() {
+    const image = new Image();
+    image.src= "space-ship.min.png";
+    const context = makeContext('dynamic-image-canvas');
+    context.drawImage(image, 100, 100);
+}
+dynamicLoadImage();
+
+/* Simple Inage loader */
+const imageLoader = {
+    loaded: true,
+    loadedImages: 0,
+    totalImages: 0,
+    load: function(url) {
+        this.totalImages++; 
+        this.loaded = false;
+        const image = new Image();
+        image.src = url; 
+        image.onload = function() {
+            imageLoader.loadedImages++;
+            if (imageLoader.loadedImages === imageLoader.totalImages) {
+                imageLoader.loaded = true;
+            }
+            image.onload = undefined;
+        }
+        return image;
+    }
+}
